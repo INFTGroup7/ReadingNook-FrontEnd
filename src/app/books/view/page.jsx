@@ -2,7 +2,7 @@ import React from 'react';
 
 export default async function BookReadOnlyPage() {
   const response = await fetch(
-    `http://backend-balancer-496462085.us-east-1.elb.amazonaws.com:8080/books`,
+    `http://backend-balancer-963158454.ap-east-1.elb.amazonaws.com:8080/books`,
     { cache: 'no-store' }
   );
   if (!response.ok) {
