@@ -54,7 +54,7 @@ export default function BookListPage() {
 
     try {
       const response = await fetch(
-        `http://${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_API_PORT}/books/update/${isbn}`,
+        `http://backend-balancer-963158454.ap-east-1.elb.amazonaws.com:8080/books/update/${isbn}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -77,7 +77,7 @@ export default function BookListPage() {
   const handleDeleteClick = async (isbn) => {
     try {
       const response = await fetch(
-        `http://${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_API_PORT}/books/delete/${isbn}`,
+        `http://backend-balancer-963158454.ap-east-1.elb.amazonaws.com:8080/books/delete/${isbn}`,
         { method: 'DELETE' }
       );
       if (!response.ok) {
@@ -120,7 +120,7 @@ export default function BookListPage() {
 
     try {
       const response = await fetch(
-        `http://${process.env.NEXT_PUBLIC_API_URL}:${process.env.NEXT_PUBLIC_API_PORT}/books/add`,
+        `http://backend-balancer-963158454.ap-east-1.elb.amazonaws.com:8080/books/add`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
