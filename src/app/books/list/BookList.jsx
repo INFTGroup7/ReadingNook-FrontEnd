@@ -17,7 +17,7 @@ export default function BookListPage() {
   const fetchBooks = async () => {
     try {
       const response = await fetch(
-        `http://backend-balancer-496462085.us-east-1.elb.amazonaws.com:8080/books`,
+        `http://frontend-balancer-1586500413.us-east-1.elb.amazonaws.com:8080/books`,
         { cache: 'no-store' }
       );
       if (!response.ok) {
@@ -54,7 +54,7 @@ export default function BookListPage() {
 
     try {
       const response = await fetch(
-        `http://backend-balancer-496462085.us-east-1.elb.amazonaws.com:8080/books/update/${isbn}`,
+        `http://frontend-balancer-1586500413.us-east-1.elb.amazonaws.com:8080/books/update/${isbn}`,
         {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -77,7 +77,7 @@ export default function BookListPage() {
   const handleDeleteClick = async (isbn) => {
     try {
       const response = await fetch(
-        `http://backend-balancer-496462085.us-east-1.elb.amazonaws.com:8080/books/delete/${isbn}`,
+        `http://frontend-balancer-1586500413.us-east-1.elb.amazonaws.com:8080/books/delete/${isbn}`,
         { method: 'DELETE' }
       );
       if (!response.ok) {
@@ -120,7 +120,7 @@ export default function BookListPage() {
 
     try {
       const response = await fetch(
-        `http://backend-balancer-496462085.us-east-1.elb.amazonaws.com:8080/books/add`,
+        `http://frontend-balancer-1586500413.us-east-1.elb.amazonaws.com:8080/books/add`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
